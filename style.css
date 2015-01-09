@@ -1,0 +1,382 @@
+/* === Generic Tag CSS === */
+*
+{
+	margin:0;
+	padding:0;
+}
+
+a,
+a:hover,
+a:visited
+{
+	color: inherit;
+	text-decoration: none;
+}
+
+h1
+{
+	font-weight: normal;
+}
+
+
+body
+{
+	min-width:1024px;
+	background-color:transparent;
+	-webkit-font-smoothing: antialiased;
+}
+
+ul
+{
+	list-style-type: none;
+	line-height: 40px;
+}
+
+#cover
+{
+	position: fixed;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	background-color: #FFFFFF;
+	z-index:2;
+}
+
+#main
+{
+	width:100%;
+	overflow:hidden;
+}
+
+/* === Header CSS === */
+nav, footer
+{
+	position: relative;
+	width:100%;
+	
+	z-index: 1;
+	
+	background-color:#333;
+	color:#FFF;
+	font-size:16px;
+	
+	font-family: 'Montserrat', sans-serif;
+	font-weight:400;
+	text-transform: uppercase;
+	overflow: hidden;
+}
+
+nav #title
+{
+	float:left;
+	padding:20px 80px;
+	text-transform: none;
+}
+
+#footer-links #title
+{
+	float:left;
+	padding:35px 80px;
+	text-transform: none;
+}
+
+nav
+{
+	height:72px;
+}
+
+nav li
+{
+	height:100%;
+	float:right;
+	padding:17px 15px;
+	text-shadow: 1px 1px 0px #555;
+	cursor:pointer;
+}
+
+#footer-links li
+{
+	height:100%;
+	float:right;
+	padding:40px 15px 160px 15px;
+	text-shadow: 1px 1px 0px #555;
+	cursor:pointer;
+}
+
+nav li:hover
+{
+	background-color:#555;
+}
+
+#footer-links li:hover
+{
+	background-color:#222;
+}
+
+footer
+{
+	height:144px;
+}
+
+nav #logo
+{
+	position:absolute;
+	left:13px;
+	top:11px;
+}
+
+#footer-links #logo
+{
+	position:absolute;
+	left:13px;
+	top:30px;
+}
+
+/* === Section Template CSS === */
+/* Full Width Section CSS */
+section.full-width, nav
+{
+	position: relative;
+	width:100%;
+}
+
+section.full-width > div, nav > div, #footer-links > div
+{
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Body Width Section CSS */
+
+section.body-width.one-column, section.body-width.two-column, section.body-width.three-column, nav > div, #footer-links > div
+{
+	position: relative;
+	margin: 0 auto;
+}
+
+section.body-width.one-column > div
+{
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	height: 100%;
+	margin-left: -720px;
+}
+
+/* Column CSS */
+
+section.body-width.one-column, section.body-width.two-column, section.body-width.three-column, nav > div, #footer-links > div
+{
+	max-width:1440px !important;
+	min-width:1024px !important;
+}
+
+section.body-width.two-column > div
+{
+	display: block;
+	position: absolute;
+	top: 0;
+	width: 50%;
+	height: 100%;
+}
+.section-two-div1
+{
+	right: 50%;
+}
+.section-two-div2
+{
+	left: 50%;
+}
+
+section.body-width.three-column > div
+{
+	display: block;
+	position: absolute;
+	top: 0;
+	width: 33%;
+	height: 100%;
+}
+
+.section-three-div1
+{
+	left: 0%;
+}
+.section-three-div2
+{
+	left: 33%;
+	width: 34%;
+}
+.section-three-div3
+{
+	left: 67%;
+}
+
+/* Within a section css */
+
+section div.left, section div.center, section div.right
+{
+	position: absolute;
+	top:0px;
+}
+
+section div.left
+{
+	right:50%;
+	width:50%;
+	text-align: right;
+}
+
+section div.center
+{
+	left:50%;
+	margin-left:-512px;
+	width:1024px;
+	text-align: center;
+}
+
+
+section div.right
+{
+	left:50%;
+	width:50%;
+	text-align: left;
+}
+
+
+
+nav
+{
+}
+
+footer
+{
+	height:500px;
+}
+
+footer h2
+{
+	text-align: center;
+	color:#FFFFFF;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	font-size: 48px;
+	padding: 20px 0;
+}
+
+footer p
+{
+	font-family: 'PT Sans', sans-serif;
+	color:#FFFFFF;
+	font-size: 24px;
+	
+	width:900px;
+	margin:0 auto;
+	text-transform: none;
+	margin-bottom: 3em;
+}
+
+#footer-links
+{
+	position:absolute;
+	bottom: 0px;
+	width:100%;
+	background-color:#111;
+	height:170px;
+}
+
+
+.section1
+{
+	height:550px;
+	background-color: #FFFFFF;
+}
+
+.animation
+{
+	position: absolute;
+	margin:75px 208px;
+	z-index:9;
+}
+
+#final
+{
+	display:none;
+}
+
+.section2
+{
+	height:400px;
+}
+
+.section2 > div
+{
+	background-color:#444;
+	background-image: url('images/redefine/solitaire-bg.jpg');
+	background-size: cover;
+}
+
+.section3
+{
+	height:140px;
+}
+
+.section4
+{
+	height:520px;
+}
+
+.section5
+{
+	height:480px;
+}
+
+.section6
+{
+	height:400px;
+	background-color:#FFF;
+}
+
+.section7
+{
+	background-color:#FFF;
+}
+
+.section7 img
+{
+	width: 100%;
+	height:auto;
+}
+
+.feature img
+{
+	position:absolute;
+	left:50%;
+	margin-top:-25px;
+	margin-left:-150px;
+	width:300px;
+	height:auto;
+	z-index:-1;
+}
+
+.feature h2
+{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 28px;
+	margin-top: 260px;
+	padding:20px 50px;
+}
+
+.feature p
+{
+	font-family: 'PT Sans', sans-serif;
+	font-size: 18px;
+	padding:0px 50px;
+}
