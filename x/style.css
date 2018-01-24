@@ -1,0 +1,189 @@
+* {
+  margin:0;
+  padding:0;
+}
+
+body {
+  margin: 0; 
+  font-weight: 500;
+  font-family: 'HelveticaNeue', 'Helvetica', sans-serif;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: minmax(700px, 90vh) auto;
+  grid-template-areas:
+    'main'
+    'twoamadios';
+}
+
+.section {
+  display:grid;
+  grid-template-columns: 1fr 900px 1fr;
+  grid-template-rows: 100%;
+  grid-template-areas:
+    '. content .';
+}
+
+.content {
+  grid-area: content;
+}
+
+h1 {
+  font-size: 3em;
+  display: block;
+}
+
+p {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+.main {
+  grid-area: main;
+  background-color: #FFFFFF;
+}
+
+.main-content {
+  display:grid;
+  align-self:center;
+  justify-self:center;
+  grid-template-columns: auto auto;
+  grid-template-rows: 1fr 80% 1fr;
+  grid-column-gap: 50px;
+  grid-template-areas:
+    '. .'
+    'main-hero main-text'
+    '. .';
+  /*background-color: #0000FF;*/
+}
+
+.main h1 {
+  color: black;
+  font-size:5em;
+  font-weight: 700;
+}
+
+.main p {
+  color: black;
+  font-weight: 300;
+}
+
+.main-hero {
+  grid-area: main-hero;
+  display:grid;
+  justify-self:right;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto 1fr;
+  grid-template-areas:
+    '.'
+    'main-hero-frame'
+    '.';
+  /*background-color: #00FF00;*/
+}
+
+.main-hero-frame {
+  grid-area: main-hero-frame;
+  max-width:calc(900px/4);
+  height:auto;
+  z-index:3;
+}
+
+.main-hero-frame-bg {
+  top:2%;
+  left:5%;
+  bottom:2%;
+  right:5%;
+  background-color: #000000;
+  border-radius: 3%;
+  z-index:1;
+}
+
+.main-hero-video {
+  top:2.97%;
+  left:6.81%;
+  width: 86.5%;
+  z-index:2;
+}
+
+.main-text {
+  grid-area: main-text;
+  align-self: center;
+  justify-self: left;
+  display:grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  grid-row-gap: 5px;
+  grid-template-areas:
+    'main-text-title'
+    'main-text-appstore';
+  /*background-color: #FF0000;*/
+}
+
+.main-text h1 {
+  grid-area: main-text-title;
+  align-self: left;
+}
+
+.main-text a {
+  grid-area: main-text-appstore;
+  justify-self: center;
+}
+
+.main-text {
+  grid-area: main-text;
+  align-self: center;
+  display:grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    'main-text-title main-text-title main-text-title'
+    '. main-text-appstore .';
+}
+
+.twoamadios {
+  grid-area: twoamadios;
+  background-color: #4a63ce;
+  text-align: center;
+}
+
+.twoamadios h1 {
+  color: white;
+  font-weight: 700;
+}
+
+.twoamadios-logo {
+  margin:100px 0px 50px 0px;
+} 
+
+.twoamadios-cutout {
+  max-width: 100%;
+  font-weight: 300;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #333333;
+}
+
+footer h1 {
+  color: white;
+  font-weight: 500;
+}
+
+footer p {
+  color: white;
+  font-weight: 300;
+}
+
+a {
+  font-weight: 700;
+  color: #373B44;
+  position: relative;
+  
+  &:hover{ 
+    opacity: 0.8;
+  }
+  
+  &:active {
+    top: 1px;
+  }
+}
