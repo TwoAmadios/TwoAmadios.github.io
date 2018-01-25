@@ -166,7 +166,8 @@ p {
 .twoamadios-cutout {
   grid-area: twoamadios-cutout;
   padding-top: 50px;
-  max-width: 100%;
+  width: 100%;
+  height: auto;
 }
 
 .twoamadios a {
@@ -242,5 +243,11 @@ p {
 
   .twoamadios-email {
     justify-self: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .main {
+    background-color: #FF0000;
   }
 }
