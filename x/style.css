@@ -218,7 +218,7 @@ p {
   
   .main-text {
     justify-self: center;
-    grid-template-rows: 10px auto auto; /* Add extra spacing */
+    grid-template-rows: 20px auto auto; /* Add extra spacing */
   }
   
   .section {
