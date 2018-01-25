@@ -56,17 +56,6 @@ p {
   /*background-color: #0000FF;*/
 }
 
-.main h1 {
-  color: black;
-  font-size:5em;
-  font-weight: 700;
-}
-
-.main p {
-  color: black;
-  font-weight: 300;
-}
-
 .main-hero {
   position:relative;
   grid-area: main-hero;
@@ -113,23 +102,38 @@ p {
   justify-self: left;
   display:grid;
   grid-template-columns: auto;
-  grid-template-rows: 0px auto auto;
-  grid-row-gap: 5px;
+  grid-template-rows: 0px auto auto auto;
   grid-template-areas:
     '.'
     'main-text-title'
-    'main-text-appstore';
+    'main-text-appstore'
+    'main-text-subtitle';
   /*background-color: #FF0000;*/
 }
 
 .main-text h1 {
   grid-area: main-text-title;
-  align-self: left;
+  justify-self: left;
+  
+  color: black;
+  font-size:5em;
+  font-weight: 700;
+}
+
+.main-text h2 {
+  grid-area: main-text-subtitle;
+  justify-self:center;
+  padding-top: 15px;
+  
+  color: lightgrey;
+  font-size:2em;
+  font-weight: 700;
 }
 
 .main-text a {
   grid-area: main-text-appstore;
   justify-self: center;
+  padding-top: 5px;
 }
 
 .twoamadios {
@@ -138,45 +142,58 @@ p {
   text-align: center;
 }
 
-.twoamadios h1 {
-  color: white;
-  font-weight: 700;
+.twoamadios-content {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 500px auto auto;
+  grid-column-gap: 75px;
+  grid-template-areas:
+    'twoamadios-logo twoamadios-logo'
+    'twoamadios-twitter twoamadios-email'
+    'twoamadios-cutout twoamadios-cutout';
 }
 
 .twoamadios-logo {
-  margin:100px 0px 50px 0px;
+  grid-area: twoamadios-logo;
+  max-width: 200px;
+  justify-self: center;
+  align-self: center;
 } 
 
+.twoamadios-twitter {
+  grid-area: twoamadios-twitter;
+  justify-self: right;
+  align-self: center;
+}
+
+.twoamadios-email {
+  grid-area: twoamadios-email;
+  justify-self: left;
+  align-self: center;
+}
+
+
 .twoamadios-cutout {
+  grid-area: twoamadios-cutout;
+  padding-top: 50px;
   max-width: 100%;
-  font-weight: 300;
-}
-
-footer {
-  grid-area: footer;
-  background-color: #333333;
-}
-
-footer h1 {
-  color: white;
-  font-weight: 500;
-}
-
-footer p {
-  color: white;
-  font-weight: 300;
 }
 
 a {
-  font-weight: 700;
-  color: #373B44;
-  position: relative;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  opacity: 0.75;
   
   &:hover{ 
-    opacity: 0.8;
+    text-decoration: underline;
+    opacity: 1.0;
   }
   
   &:active {
-    top: 1px;
   }
+}
+
+a:hover{
+    opacity: 1.0;
 }
