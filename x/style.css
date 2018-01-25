@@ -102,6 +102,7 @@ p {
   display:grid;
   grid-template-columns: auto;
   grid-template-rows: 0px auto auto;
+  grid-gap:5px;
   grid-template-areas:
     '.'
     'main-text-title'
