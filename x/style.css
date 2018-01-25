@@ -246,8 +246,26 @@ p {
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 720px) {
+  
+  .main-text h1 {
+    font-size:3em;
+  }
+  
+  h1 {
+    font-size: 1em;
+  }
+  
   .main {
     background-color: #FF0000;
   }
+  
+  .main-hero-frame {
+    max-width:calc(720px/4);
+  }
+  
+  .twoamadios-logo {
+    max-width: 75px;
+    margin: 50px 0px 50px 0px;
+  } 
 }
