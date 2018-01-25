@@ -2,16 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="description" content="Solitaire, redesigned for iOS 7">
-		<meta name="viewport" content="width=1024" />
+		<meta name="description" content="A Modern Classic">
+		<meta name="viewport" content="initial-scale=1, viewport-fit=cover"/>
 		<meta name="apple-itunes-app" content="app-id=687790416">
 		<meta property="og:image" content="http://amad.io/images/Solitaire Seven App Icon 256x256.png" />
-		<meta property="og:title" content="Solitaire Seven" />
-		<meta property="og:description" content="Solitaire, redesigned for iOS 7" />
+		<meta property="og:title" content="Solitaire X" />
+		<meta property="og:description" content="A Modern Classic" />
         
-        <title>Solitaire 7 - Two Amadios</title>
+        <title>Solitaire X - Two Amadios</title>
 		
-		<script type='text/javascript' src='images/intro/intro.js'></script>
 		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 		
@@ -48,216 +47,38 @@
 		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 		
-		  ga('create', 'UA-44185032-1', 'amadio.ca');
+		  ga('create', 'UA-44185032-1', 'amad.io');
 		  ga('send', 'pageview');
 		
 		</script>
-		
-		<!--[if !IE]><!-->
-		<script>
-			if(addEventListener in document)
-			{
-				document.addEventListener('load', runAnimation, false);
-			}
-			else
-			{
-				window.onload = runAnimation;
-			}
-			
-			function runAnimation()
-			{
-			    /* place the rAF *before* the render() to assure as close to 60fps with the setTimeout fallback.*/
-			    var frame = 0;
-			    var blockSize = intro.blockSize;
-			    var canvas = document.getElementById('animation');
-			    var cover = document.getElementById('cover');
-			    var finalImage = document.getElementById('final');
-			    cover.style['opacity'] = 1;
-			    var ctx = canvas.getContext('2d');
-			    var render = false;
-			    
-			    var imagePacked = new Image();
-			    imagePacked.onload = function () {
-				        render = true;
-				        draw();
-				    };
-			    
-			    
-			    var imageInit = new Image();
-			    imageInit.onload = function () {
-			        ctx.drawImage(imageInit, 0, 0);
-			        imagePacked.src = 'images/intro/introPacked.png'; /* shim layer with setTimeout fallback*/
-			    };
-			    imageInit.src = 'images/intro/intro.png';
-			    
-			    
-			    var fps = 30;
-				var now;
-				var then = Date.now();
-				var interval = 1000/fps;
-				var delta;
-				  
-				function draw() {
-				     
-				    requestAnimationFrame(draw);
-				     
-				    now = Date.now();
-				    delta = now - then;
-				     
-				    if (delta > interval) {
-				        then = now - (delta % interval);
-				         
-				        if (render)
-				        {
-				            animate();
-				        }
-				    }
-				}
-				 
-				draw();
-			
-			    function animate() {
-			        console.log(frame); /*For each change, copy the proper change to the canvas*/
-			        for (var j = 0; j < intro.frames[frame].length; j++) { /*Grab the change data*/
-			            var blit = intro.frames[frame][j]; /*Draw it*/
-			            ctx.drawImage(imagePacked, blit[0] * blockSize, blit[1] * blockSize, blockSize, blockSize, blit[2] * blockSize, blit[3] * blockSize, blockSize, blockSize);
-			        } /*Increase the frame*/
-			        frame++;
-			        if (frame > intro.count-30)
-			        {
-				        cover.style['opacity'] -= 1/30;
-			        }
-			        
-			        if (frame > intro.count - 1)
-			        {
-			            render = false;
-			            cover.style['display'] = "none";
-			            finalImage.style['display'] = "block";
-			        }
-			    }
-			}
-		</script>
-		<!--<![endif]-->
-		
-		<!--[if IE]>
-		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<script>
-			window.onload = skipAnimation;
-			
-			function skipAnimation()
-			{
-			    var cover = document.getElementById('cover');
-			    var finalImage = document.getElementById('final');
-			    cover.style['display'] = "none";
-			    finalImage.style['display'] = "block";
-			}
-		</script>
-		<![endif]-->
-        
 	</head>
     
 	<body>
-		<div id="cover"></div>
-    	<div id="main">
-    		<nav>
-    			<div>
-	    			<h1><img id="logo" width="50" height="50" src="images/logo.png"/></h1>
-	    			<h1 id="title"> | Two Amadios</h1>
-	    			<ul>
-	    				<a href="https://twitter.com/twoamadios"><li id="twitter">Twitter</li></a>
-	    				<a href="mailto:twoamadios@gmail.com"><li id="mail">Mail</li></a>
-	    				<a href="#aboutus"><li id="about">About Us</li></a>
-	    			</ul>
-    			</div>
-			</nav>
-            <section class="body-width one-column section1">
-                <div>
-                	
-                	<canvas id="animation" class="animation" width='1024' height='400'></canvas>
-                	<img id="final" class="animation" src="images/intro/introEnd.png" width="1024" height="400" />
-                	
-                </div>
-            </section>
-            <!-- The blurred background section with the overhang-->
-            <section class="full-width one-column section2">
-                <div>
-                	<div class="left">
-                		<h1 style="margin-right:25px; margin-top:130px;"><img width="544" height="136" src="images/redefine/redefining.png" alt="refining the solitaire experience" /></h1>
-					</div>
-            		<div class="right">
-                		<h1 style="margin-left:50px;"><img width="757" height="506" src="images/redefine/solitaire-close-web.png" /></h1>
-					</div>
-                </div>
-            </section>
-            
-            <!-- Designed for iOS 7 section (app.io?) -->
-            <section class="full-width one-column section3">
-                <div>
-                	<div class="left">
-                		<h1 style="margin-top:45px; margin-right:-95px;"><img width="400" height="56" src="images/designed.png" alt="Designed for iOS 7" /></h1>
-					</div>
-                </div>
-            </section>
-            <section class="body-width three-column section4">
-            	<div class="feature section-three-div1">
-            		<img src="images/features/K1.png" />
-            		<h2>Klondike 1</h2>
-                	<p>A modification of Klondike with one card drawn at a time</p>
-                </div>
-                <div class="feature section-three-div2">
-                	<img src="images/features/K3.png" />
-                	<h2>Klondike 3</h2>
-                	<p>The classic Klondike game with 3 cards drawn each time</p>
-                </div>
-                <div class="feature section-three-div3">
-                	<img src="images/features/FC.png" />
-                	<h2>Free Cell</h2>
-                	<p>A harder version of solitaire with "Free Cells" you can use to store cards temporarily</p>
-                </div>
-            </section>
-            <section class="body-width three-column section5">
-            	<div class="feature section-three-div1">
-            		<img src="images/features/look.png" />
-            		<h2>Clean Look</h2>
-                	<p>A carefully designed look highlighting readability and physicality while staying out of the way</p>
-                </div>
-                <div class="feature section-three-div2">
-                	<img src="images/features/stats.png" />
-                	<h2>Stat Tracking</h2>
-                	<p>Check out your wins and losses or find out how much money you would have lost at a casino</p>
-                </div>
-                <div class="feature section-three-div3">
-                	<img src="images/features/lefty.png" />
-                	<h2>Southpaw</h2>
-                	<p>A customized layout making it more comfortable to play with your left hand</p>
-                </div>
-            </section>
-            <section class="full-width one-column section6">
-            	<div>
-                	<img style="position:absolute; right:50%; margin-right:150px;" width="300" height="300" src="images/appstore/icon.gif" />
-                	<img style="position:absolute; left:50%; margin-left:-120px; margin-top:10px" width="600" height="227" src="images/appstore/icon-text.png" />
-                	<a href="http://taps.io/solitaire-seven" style="border:0;"><img style="position:absolute; left:50%; margin-left:80px; margin-top:240px; border:0;" width="180" height="53" src="images/appstore/appstore.png" /></a>
-                </div>
-            </section>
-            <section class="body-width one-column section7">
-            	<img src="images/amadios.jpg" />
-            </section>
-            <footer id="aboutus">
-            	<h2>ABOUT US</h2>
-            	<p>We are two brothers, Adam and Sean Amadio, from Toronto. After playing dozens of Solitaire games with the same visual style, the same clunky mechanics, and the same overlooked details, we tried to imagine what a Solitaire game could look like in 2013. Inspired by the design direction of iOS 7, we set out to strip the bloat out of one of the most popular games on the planet and recreate the Solitaire experience from the ground up.</p>
-            	<div id="footer-links">
-	            	<div>
-		    			<h1><img id="logo" width="50" height="50" src="images/logo.png"/></h1>
-		    			<h1 id="title"> | Two Amadios</h1>
-		    			<ul>
-		    				<a href="https://twitter.com/twoamadios"><li id="twitter">Twitter</li></a>
-		    				<a href="mailto:two@amad.io"><li id="mail">Mail</li></a>
-		    				<a href="Solitaire%20Seven%20Press%20Kit%20v1.0.1.zip"><li id="about">Press Kit</li></a>
-                            <a href="http://sean.amad.io"><li id="sean">Sean's Work</li></a>
-		    			</ul>
-	    			</div>
-            	</div>
-            </footer>
+		<div class="section main">  
+          <div class="content main-content">
+            <div class="main-hero">
+              <div class="main-hero-frame-bg"></div>
+              <video autoplay loop muted playsinline class="main-hero-video" src="images/SolitaireXHeroVideo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <img class="main-hero-frame" src="images/hero-frame.png"/>
+            </div>
+            <div class="main-text">
+              <h1>Solitaire X</h1>
+              <a href="http://taps.io/solitaire-seven" style="border:0;">
+                <img src="images/AppStore.svg" alt="Download Solitaire X on the App Store"/>
+              </a>
+            </div>
+          </div>
         </div>
-	</body>
+      
+        <div class="section twoamadios">  
+          <div class="content twoamadios-content">
+            <img class="twoamadios-logo" src="images/logo.png"/>
+            <a href="https://twitter.com/twoamadios" class="twoamadios-twitter"><h1>@twoamadios</h1></a>
+            <a href="mailto:two@amad.io" class="twoamadios-email"><h1>two@amad.io</h1></a>
+            <img class="twoamadios-cutout" src="images/amadios-cutout.png"/>
+          </div>
+        </div>
+    </body>
 </html>
