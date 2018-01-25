@@ -252,12 +252,12 @@ p {
     font-size:3em;
   }
   
-  h1 {
-    font-size: 1em;
+  .main-text a img {
+    max-width: 80px;
   }
   
-  .main {
-    background-color: #FF0000;
+  h1 {
+    font-size: 1em;
   }
   
   .main-hero-frame {
