@@ -112,7 +112,7 @@ p {
 
 .main-text h1 {
   grid-area: main-text-title;
-  justify-self: left;
+  justify-self: center;
   
   color: black;
   font-size:5em;
@@ -134,7 +134,7 @@ p {
 .twoamadios-content {
   display:grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 500px auto auto;
+  grid-template-rows: auto auto auto;
   grid-column-gap: 75px;
   grid-template-areas:
     'twoamadios-logo twoamadios-logo'
@@ -145,6 +145,7 @@ p {
 .twoamadios-logo {
   grid-area: twoamadios-logo;
   max-width: 200px;
+  margin: 150px;
   justify-self: center;
   align-self: center;
 } 
@@ -185,4 +186,61 @@ p {
 
 .twoamadios a:hover{
     opacity: 1.0;
+}
+
+@media (max-width: 900px) {
+  body {
+    grid-template-rows: auto auto;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  .main-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px auto auto 100px;
+    grid-row-gap: 0px;
+    grid-template-areas:
+      '.'
+      'main-hero'
+      'main-text'
+      '.';
+  }
+  
+  .main-hero {
+    justify-self:center;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 'main-hero-frame';
+  }
+  
+  .main-text {
+    justify-self: center;
+    grid-template-rows: 10px auto auto; /* Add extra spacing */
+  }
+  
+  .section {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    'content';
+  }
+  
+  .twoamadios-content {
+    grid-column-gap: 0px;
+  }
+  
+  .twoamadios-logo {
+    max-width: 150px;
+    margin: 100px;
+  } 
+  
+  .twoamadios-twitter {
+    justify-self: center;
+  }
+
+  .twoamadios-email {
+    justify-self: center;
+  }
 }
