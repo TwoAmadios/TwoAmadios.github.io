@@ -1,3 +1,13 @@
+@font-face {
+  font-family: SFCompact;
+  src: url(SF-Compact-Display-Medium.otf);
+}
+
+@font-face {
+  font-family: SFProRound;
+  src: url(SF-Pro-Rounded-Medium.otf);
+}
+
 * {
   margin:0;
   padding:0;
@@ -5,14 +15,14 @@
 
 body {
   margin: 0; 
-  font-weight: 500;
-  font-family: 'HelveticaNeue', 'Helvetica', sans-serif;
+  font-weight: normal;
+  font-family: SFCompact, sans-serif;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: minmax(700px, 90vh) auto;
   grid-template-areas:
     'main'
-    'twoamadios';
+    'studioamadio';
 }
 
 .section {
@@ -34,7 +44,7 @@ h1 {
 
 p {
   font-size: 1.5em;
-  font-weight: 300;
+  font-weight: normal;
 }
 
 .main {
@@ -111,12 +121,13 @@ p {
 }
 
 .main-text h1 {
+  font-family: SFProRound;
   grid-area: main-text-title;
   justify-self: center;
   
   color: black;
   font-size:5em;
-  font-weight: 700;
+  font-weight: normal;
 }
 
 .main-text a {
@@ -125,68 +136,68 @@ p {
   padding-top: 5px;
 }
 
-.twoamadios {
-  grid-area: twoamadios;
+.studioamadio {
+  grid-area: studioamadio;
   background-color: #4a63ce;
   text-align: center;
 }
 
-.twoamadios-content {
+.studioamadio-content {
   display:grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto auto;
   grid-column-gap: 75px;
   grid-template-areas:
-    'twoamadios-logo twoamadios-logo'
-    'twoamadios-twitter twoamadios-email'
-    'twoamadios-cutout twoamadios-cutout';
+    'studioamadio-logo studioamadio-logo'
+    'studioamadio-twitter studioamadio-email'
+    'studioamadio-cutout studioamadio-cutout';
 }
 
-.twoamadios-logo {
-  grid-area: twoamadios-logo;
-  max-width: 200px;
-  margin: 150px;
+.studioamadio-logo {
+  grid-area: studioamadio-logo;
+  max-width: 400px;
+  margin: 100px;
   justify-self: center;
   align-self: center;
 } 
 
-.twoamadios-twitter {
-  grid-area: twoamadios-twitter;
+.studioamadio-twitter {
+  grid-area: studioamadio-twitter;
   justify-self: right;
   align-self: center;
 }
 
-.twoamadios-email {
-  grid-area: twoamadios-email;
+.studioamadio-email {
+  grid-area: studioamadio-email;
   justify-self: left;
   align-self: center;
 }
 
 
-.twoamadios-cutout {
-  grid-area: twoamadios-cutout;
-  padding-top: 50px;
+.studioamadio-cutout {
+  grid-area: studioamadio-cutout;
+  padding-top: 10px;
   width: 100%;
   height: auto;
 }
 
-.twoamadios a {
-  font-weight: 500;
+.studioamadio a {
+  font-family: SFCompact;
+  font-size: 20pt;
+  font-weight: normal;
   color: white;
   text-decoration: none;
   opacity: 0.75;
   
   &:hover{ 
-    text-decoration: underline;
+    text-decoration: none;
     opacity: 1.0;
-  }
-  
-  &:active {
   }
 }
 
-.twoamadios a:hover{
+.studioamadio a:hover{
     opacity: 1.0;
+    text-decoration: none;
 }
 
 @media (max-width: 900px) {
@@ -228,21 +239,25 @@ p {
     'content';
   }
   
-  .twoamadios-content {
+  .studioamadio-content {
     grid-column-gap: 0px;
   }
   
-  .twoamadios-logo {
-    max-width: 150px;
-    margin: 100px;
+  .studioamadio-logo {
+    max-width: 300px;
+    margin: 50px;
   } 
   
-  .twoamadios-twitter {
+  .studioamadio-twitter {
     justify-self: center;
   }
 
-  .twoamadios-email {
+  .studioamadio-email {
     justify-self: center;
+  }
+
+  .studioamadio a {
+    font-size: 16pt;
   }
 }
 
@@ -264,8 +279,12 @@ p {
     max-width:calc(720px/4);
   }
   
-  .twoamadios-logo {
-    max-width: 75px;
-    margin: 100px 0px 75px 0px;
+  .studioamadio-logo {
+    max-width: 150px;
+    margin: 25px;
   } 
+
+  .studioamadio a {
+    font-size: 12pt;
+  }
 }
