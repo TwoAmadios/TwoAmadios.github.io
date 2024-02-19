@@ -58,11 +58,11 @@ p {
   justify-self:center;
   grid-template-columns: auto auto;
   grid-template-rows: 1fr 80% 1fr;
-  grid-column-gap: 50px;
+  grid-column-gap: 75px;
   grid-template-areas:
-    '. .'
+    'main-hero .'
     'main-hero main-text'
-    '. .';
+    'main-hero .';
   /*background-color: #0000FF;*/
 }
 
@@ -79,30 +79,11 @@ p {
     '.';
 }
 
-.main-hero-frame {
+.main-hero-video {
   grid-area: main-hero-frame;
-  max-width:calc(900px/4);
+  max-width:250px;
   height:auto;
   z-index:3;
-}
-
-.main-hero-frame-bg {
-  position:absolute;
-  top:2%;
-  left:5%;
-  bottom:2%;
-  right:5%;
-  background-color: #000000;
-  border-radius: 3%;
-  z-index:1;
-}
-
-.main-hero-video {
-  position:absolute;
-  top:2.97%;
-  left:6.81%;
-  width: 86.5%;
-  z-index:2;
 }
 
 .main-text {
